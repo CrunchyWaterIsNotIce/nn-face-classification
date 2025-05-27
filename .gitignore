@@ -2,3 +2,4 @@
 /isFace_data
 /__pycache__
 .DS_Store
+faces_vs_nonfaces_train_32by32.csv
