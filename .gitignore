@@ -3,3 +3,4 @@
 /__pycache__
 .DS_Store
 faces_vs_nonfaces_train_32by32.csv
+faces_vs_nonfaces_test_32by32.csv

@@ -25,4 +25,5 @@ for filename in os.listdir('isFace_data/train/nonface'):
 
 df_facenonface = pd.DataFrame(data)
 df_facenonface['target'] = targets
-df_facenonface.to_csv('faces_vs_nonfaces_32by32.csv', index=False)
+df_facenonface = df_facenonface.sample(frac=1).reset_index(drop=True)
+df_facenonface.to_csv('faces_vs_nonfaces_train_32by32.csv', index=False)
