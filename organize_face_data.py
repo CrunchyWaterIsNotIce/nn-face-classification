@@ -21,7 +21,7 @@ for filename in os.listdir('isFace_data/train/nonface'):
         img = cv2.resize(img, (32, 32))
         img = (img / 255.0).astype('float32')
         data.append(img.flatten())
-        targets.append(0)  # 0 = non-face
+        targets.append(0)  # 0 = non face
 
 df_facenonface = pd.DataFrame(data)
 df_facenonface['target'] = targets
