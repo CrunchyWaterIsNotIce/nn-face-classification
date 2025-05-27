@@ -6,4 +6,4 @@ This project explores the fundamentals of machine learning through the creation 
 
 Though creating this repository allowed me to then experiment with more complex datasets and different activation and loss functions like ReLus and Binary Cross Entropy which helped my neural network work more efficiently.
 
-The image data collected was generated from cannguyen275's repository [isFace](https://github.com/cannguyen275/isFace/tree/master)'s image data and used to be fed into my scratch neural network. Each image was then greyscaled and condensed into 32x32 before being vector normalized into a .csv dataset. The .csv dataset isn't pushed into the repository due to size constraints.
+The image data collected was generated from cannguyen275's repository [isFace](https://github.com/cannguyen275/isFace/tree/master)'s image data and used to be fed into my scratch neural network. Each image was then greyscaled and condensed into 32x32 before being vector normalized into a .csv dataset. ***The .csv dataset isn't pushed into the repository due to size constraints.***
