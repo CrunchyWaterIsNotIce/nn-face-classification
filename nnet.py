@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np, numpy.typing as npt
 
-
 def relu(x: npt.NDArray[np.float32]) -> npt.NDArray[np.float32]:
     return np.maximum(0, x)
 
@@ -17,7 +16,7 @@ def sigmoid_derivative(x: npt.NDArray[np.float32]) -> npt.NDArray[np.float32]:
 
 class layer:
     def __init__(self, num_n_in: int, num_n_out: int, type_active):
-        self.bias = np.zeros((num_n_out, 1), dtype=np.float32) # implement custom later
+        self.bias = np.zeros((num_n_out, 1), dtype=np.float32)
         self.weights = np.random.uniform(-0.1, 0.1, (num_n_out, num_n_in)).astype(np.float32)
         self.input = None
         self.output = None
@@ -44,7 +43,6 @@ class layer:
         weight_gradient = delta @ self.input.T # transposed to (1, num_inputs)
         bias_gradient = delta
 
-        # parameter update
         self.weights -= learning * weight_gradient
         self.bias -= learning * bias_gradient
         
@@ -68,7 +66,6 @@ class nn:
             self.layers.append(layer(ls[lay_i], ls[lay_i + 1], type_active))
         self.layers[-1].activation = "sigmoid"
     
-    # call forward for all layers, then backward
     def learn(self):
         for epoch in range(self.epochs):
             total_loss = 0
@@ -80,8 +77,7 @@ class nn:
                 for layer in self.layers:
                     input = layer.forward(input)
                 
-                # CHANGE THIS TO MSE OR BINARY CROSS ENTROPY
-                delta_output = input - target
+                delta_output = input - target # MSE and BCE derivitive
                 total_loss += np.sum(delta_output ** 2)
                 
                 for layer in reversed(self.layers):
