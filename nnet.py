@@ -9,6 +9,7 @@ def relu_derivative(x: npt.NDArray[np.float32]) -> npt.NDArray[np.float32]:
     return (x > 0).astype(np.float32)
 
 def sigmoid(x: npt.NDArray[np.float32]) -> npt.NDArray[np.float32]:
+    x = np.clip(x, -500, 500)
     return 1 / (1 + np.exp(-x))
 
 def sigmoid_derivative(x: npt.NDArray[np.float32]) -> npt.NDArray[np.float32]:
@@ -39,6 +40,7 @@ class layer:
             d_activation = relu_derivative(self.output)
         
         delta *= d_activation
+        delta = np.clip(delta, -1, 1)
 
         weight_gradient = delta @ self.input.T # transposed to (1, num_inputs)
         bias_gradient = delta
