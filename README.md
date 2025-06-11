@@ -1,4 +1,4 @@
-# NN-Face-Classification 🥸
+# nn-face-classification 🥸
 
 This project explores the fundamentals of machine learning through the creation of an neural network system from scratch using only *Numpy* and *Pandas* — no external ML frameworks. 
 
